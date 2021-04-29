@@ -3,12 +3,8 @@
 		"apps": [],
 		"details": [
 			{
-				"appID":"RDU82N2ES6.expert.fitech.mobilebanking",
-				"paths":["*"]
-			},
-			{
-				"appID":"RDU82N2ES6.expert.fitech.mobilebanking.uat",
-				"paths":["/uat/*"]
+				"appID": "RDU82N2ES6.expert.fitech.mobilebanking",
+				"paths": ["*"]
 			}
 		]
 	}
