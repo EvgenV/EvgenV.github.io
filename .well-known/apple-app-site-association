@@ -1,0 +1,15 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [
+			{
+				"appID":"RDU82N2ES6.expert.fitech.mobilebanking",
+				"paths":["/dev/*"]
+			},
+			{
+				"appID":"RDU82N2ES6.expert.fitech.mobilebanking.uat",
+				"paths":["/uat/*"]
+			}
+		]
+	}
+}
