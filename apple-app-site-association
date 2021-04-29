@@ -4,7 +4,7 @@
 		"details": [
 			{
 				"appID":"RDU82N2ES6.expert.fitech.mobilebanking",
-				"paths":["/dev/*"]
+				"paths":["*"]
 			},
 			{
 				"appID":"RDU82N2ES6.expert.fitech.mobilebanking.uat",
