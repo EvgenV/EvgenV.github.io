@@ -9,14 +9,14 @@
 
       function drawChart() {
         var data = new google.visualization.DataTable();
-      data.addColumn('datetime', 'Time');
-      data.addColumn('number', 'Temp, C');
-      data.addColumn('number', 'Humidity, %');
-      data.addColumn('number', 'Preasure, kPa');
-      data.addRows([[new Date(1728324104*1000), 22, 55, 979.71912]]);
+        data.addColumn('datetime', 'Time');
+        data.addColumn('number', 'Temp, C');
+        data.addColumn('number', 'Humidity, %');
+        data.addColumn('number', 'Preasure, kPa');
+        data.addRows([[new Date(1728324104*1000), 22, 55, 979.71912]]);
         
         var options = {width: '100%',
-          title: 'GEEKMATIC.IN.UA',
+          title: 'ESP32+BME280',
           curveType: 'function',
           legend: { position: 'bottom' },
           vAxes: {
@@ -44,6 +44,41 @@
     </script>
   </head>
   <body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script>
+const firebaseConfig = {
+  databaseURL: "https://esp32-bme280-271d5-default-rtdb.europe-west1.firebasedatabase.app",
+};
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+
+      const commentsRef = ref(db, 'bme280');
+onChildAdded(commentsRef, (data) => {
+  console.log(data);
+  // addCommentElement(postElement, data.key, data.val().text, data.val().author);
+});
+
+      
+//       // Sort users by email alphabetically
+// const usersRef = db.ref("users");
+// usersRef.orderByChild("email").once("value", ...);
+
+// // Get last 5 chat messages
+// const chatsRef = db.ref("chats"); 
+// chatsRef.limitToLast(5).once("value", ...);
+
+// // Fetch users between ages 18 to 30 
+// usersRef.orderByChild("age")
+//          .startAt(18).endAt(30)
+//          .once("value", ...);
+
+// // Find user by email
+// usersRef.orderByChild("email")
+//         .equalTo("ada@lovelace.com")
+//         .once("value", ...);
+    </script>
+
     <div id='curve_chart' style='width: 100%; height: 600px'></div>
   </body>
 </html>
