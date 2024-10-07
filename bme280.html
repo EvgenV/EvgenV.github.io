@@ -64,7 +64,7 @@
       // const lastRef = query(bme280Ref, limitToLast(5)).ref;
       
 onChildAdded(query(bme280Ref, limitToLast(5)), (data) => {
-  console.log("Keu: " + data.key + " val: " + data.val().toJSON());
+  console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
   // addCommentElement(postElement, data.key, data.val().text, data.val().author);
 });
 
