@@ -60,18 +60,13 @@
       // bme280Ref.orderByChild("created").limitToLast(2).on("child_added", function(snapshot) {
       //   console.log("key: " + data.key + " val: " + data.val());
       // });
-      onValue(query(bme280Ref, limitToLast(5)), (data) => {
-        console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
-
+      onValue(query(bme280Ref, limitToLast(200)), (data) => {
+        // console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
         var rows = [];
         for (const [key, value] of Object.entries(data.val())) {
           rows.push([new Date(value.created * 1000), value.temperature, value.humidity, value.pressure]);
         }
-        // for (const value in Object.values(data.val())) {
-        //   rows.push([new Date(value.created * 1000), value.temperature, value.humidity, value.pressure]);
-        // }
         drawChart(rows);
-        // [[new Date(1728324104*1000), 22, 55, 979.71912]]
       });
 
 // onChildAdded(query(bme280Ref, limitToLast(5)), (data) => {
