@@ -4,7 +4,8 @@
 <!--     <meta http-equiv='refresh' content='61'/> -->
     <title>Daily temperature</title>
     <script type='text/javascript'>
-      google.charts.load('current', {'packages':['corechart']});
+      // google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart(rows = [[new Date(1728324104*1000), 22, 55, 979.71912]]) {
@@ -17,7 +18,7 @@
         
         var options = {width: '100%',
           title: 'ESP32+BME280',
-          curveType: 'function',
+          // curveType: 'function',
           legend: { position: 'bottom' },
           vAxes: {
             0: {title: 'C', textPosition: 'out'},
