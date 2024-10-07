@@ -58,7 +58,7 @@
 
       const commentsRef = ref(db, 'bme280');
 onChildAdded(commentsRef, (data) => {
-  console.log(data);
+  console.log("Keu: " + data.key + " val: " + data.val());
   // addCommentElement(postElement, data.key, data.val().text, data.val().author);
 });
 
