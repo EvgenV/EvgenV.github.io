@@ -60,13 +60,14 @@
       // bme280Ref.orderByChild("created").limitToLast(2).on("child_added", function(snapshot) {
       //   console.log("key: " + data.key + " val: " + data.val());
       // });
-// const topUserPostsRef = query(bme280Ref, orderByChild('starCount'));
-      // const lastRef = query(bme280Ref, limitToLast(5)).ref;
-      
-onChildAdded(query(bme280Ref, limitToLast(5)), (data) => {
-  console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
-  // addCommentElement(postElement, data.key, data.val().text, data.val().author);
-});
+      onValue(query(bme280Ref, limitToLast(5)), (data) => {
+        console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
+      });
+
+// onChildAdded(query(bme280Ref, limitToLast(5)), (data) => {
+//   console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
+//   // addCommentElement(postElement, data.key, data.val().text, data.val().author);
+// });
 
       
 //       // Sort users by email alphabetically
