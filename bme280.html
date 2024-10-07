@@ -4,8 +4,8 @@
 <!--     <meta http-equiv='refresh' content='61'/> -->
     <title>Daily temperature</title>
     <script type='text/javascript'>
-      // google.charts.load('current', {'packages':['corechart']});
-      google.charts.load('current', {'packages':['line']});
+      google.charts.load('current', {'packages':['corechart']});
+      // google.charts.load('current', {'packages':['line']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart(rows = [[new Date(1728324104*1000), 22, 55, 979.71912]]) {
@@ -41,7 +41,7 @@
         // var formatter = new google.visualization.DateFormat({pattern: 'dd.MM.yyyy HH:mm'});
         // formatter.format(data, 0);
         // chart.draw(data, options);
-        var chart = new google.visualization.Line(document.getElementById('curve_chart'));
+        var chart = new google.charts.Line(document.getElementById('curve_chart'));
         var formatter = new google.visualization.DateFormat({pattern: 'dd.MM.yyyy HH:mm'});
         formatter.format(data, 0);
         chart.draw(data, google.charts.Line.convertOptions(options));
