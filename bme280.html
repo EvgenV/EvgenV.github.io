@@ -44,8 +44,8 @@
     </script>
   </head>
   <body>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js"></script>
     
 <!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-app.js"> </script> -->
 <!--     <script type="module">
@@ -56,7 +56,7 @@
         databaseURL: "https://esp32-bme280-271d5-default-rtdb.europe-west1.firebasedatabase.app",
       };
       const app = firebase.initializeApp(firebaseConfig);
-      const db = firebase.getDatabase(app);
+      const db = firebase.database(app);
 
 
       const commentsRef = ref(db, 'bme280');
