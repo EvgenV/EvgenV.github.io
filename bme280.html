@@ -57,13 +57,16 @@
       const db = getDatabase(app);
 
       const bme280Ref = ref(db, 'bme280');
-      bme280Ref.orderByChild("created").limitToLast(2).on("child_added", function(snapshot) {
-        console.log("key: " + data.key + " val: " + data.val());
-      });
-// onChildAdded(bme280Ref, (data) => {
-//   console.log("Keu: " + data.key + " val: " + data.val());
-//   // addCommentElement(postElement, data.key, data.val().text, data.val().author);
-// });
+      // bme280Ref.orderByChild("created").limitToLast(2).on("child_added", function(snapshot) {
+      //   console.log("key: " + data.key + " val: " + data.val());
+      // });
+// const topUserPostsRef = query(bme280Ref, orderByChild('starCount'));
+      const lastRef = query(bme280Ref, limitToLast(20)).ref;
+      
+onChildAdded(lastRef, (data) => {
+  console.log("Keu: " + data.key + " val: " + data.val());
+  // addCommentElement(postElement, data.key, data.val().text, data.val().author);
+});
 
       
 //       // Sort users by email alphabetically
