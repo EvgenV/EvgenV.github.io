@@ -65,7 +65,7 @@
       // bme280Ref.orderByChild("created").limitToLast(2).on("child_added", function(snapshot) {
       //   console.log("key: " + data.key + " val: " + data.val());
       // });
-      onValue(query(bme280Ref, limitToLast(500)), (data) => {
+      onValue(query(bme280Ref, limitToLast(200)), (data) => {
         // console.log("Keu: " + data.key + " val: " + JSON.stringify(data.val()));
         var rows = [];
         for (const [key, value] of Object.entries(data.val())) {
