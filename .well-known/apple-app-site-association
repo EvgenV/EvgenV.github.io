@@ -1,0 +1,31 @@
+{
+  "webcredentials": {
+    "apps": [
+      "8666T462MX.io.nonbank.dev",
+      "8666T462MX.io.nonbank.qa",
+      "8666T462MX.io.nonbank.pprod"
+    ]
+  },
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "8666T462MX.io.nonbank.dev",
+          "8666T462MX.io.nonbank.qa",
+          "8666T462MX.io.nonbank.pprod"
+        ],
+        "components": [
+          {
+            "/": "/wallet_connect/*",
+            "comment": "Matches any URL with a path that starts with /wallet_connect/."
+          },
+          {
+            "/": "/*",
+            "exclude": true,
+            "comment": "Matches any URL with a path that starts with /help/website/ and instructs the system not to open it as a universal link."
+          }
+        ]
+      }
+    ]
+  }
+}
