@@ -16,7 +16,7 @@
         ],
         "components": [
           {
-            "/": "/wallet_connect/*",
+            "/": "/wc/*",
             "comment": "Matches any URL with a path that starts with /wallet_connect/."
           },
           {
